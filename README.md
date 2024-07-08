@@ -11,6 +11,13 @@ Programación en los lenguajes: Python, Java, C y C++
       - [Concatenación de cadenas en Python](#concatenación-de-cadenas-en-python)
       - [Interpolación de cadenas en Python](#interpolación-de-cadenas-en-python)
     - [Entrada de datos por consola en Python](#entrada-de-datos-por-consola-en-python)
+    - [Operadores Aritméticos en Python](#operadores-aritméticos-en-python)
+    - [Operadores de Asignación en Python](#operadores-de-asignación-en-python)
+    - [Operador de Asignación Compuesto en Python](#operador-de-asignación-compuesto-en-python)
+    - [Operadores de Comparación en Python](#operadores-de-comparación-en-python)
+    - [Sentencia if - else en Python](#sentencia-if---else-en-python)
+    - [Operadores lógicos AND, OR y NOT en Python](#operadores-lógicos-and-or-y-not-en-python)
+    - [Bucle WHILE en Python](#bucle-while-en-python)
 
 ## Python v3
 
@@ -164,4 +171,126 @@ Para que el operador **+** realice la suma y no la concatenación de dos número
     suma = numero1 + numero2    #La conversión a int() se puede realizar aquí
 
     print(f'El Resultado de {numero1} + {numero2} = {suma}')
+```
+
+### Operadores Aritméticos en Python
+
+```python
+a,b = 10, 5
+suma = a + b
+resta = a - b
+multiplicacion = a * b
+division = a / b    # operador división (devuelve número real float)
+modulo = a % b      # operador módulo (resto de la división)
+potencia = a ** b   # base: a, exponente: b
+```
+
+### Operadores de Asignación en Python
+
+Asignación de un valor primitivo:
+
+```python
+a = 5
+print(f'El Resultado de {a} + {a} = {a+a}')
+```
+
+Asignación múltiple:
+
+```python
+a, b, c = 10, "Esto es un string", 14.5
+print(f'Valor de {a}, de {b} y de {c}')
+```
+
+Asignación de un mismo valor a diferentes variables:
+
+```python
+x = y = z = 20
+print(f'El valor de {x}, {y} y {z} es 20')
+```
+
+### Operador de Asignación Compuesto en Python
+
+El operador compuesto de suma **+=** combina la suma con la asignación. El resultado de la suma se almacena en la misma variable que participa en la operación de suma.
+
+```python
+a += b # a = a + b
+```
+
+El operador compuesto de de resta **-=** combina la resta con la asignación `a -= b`.  
+El operador compuesto de la multiplicación `a *= b`.
+El operador compuesto de la división `a /= b`.
+
+### Operadores de Comparación en Python
+
+Realiza comparaciones entre variables. También se conocen como **comparadores relacionales**. Este tipo de comparaciones, retorna valores: **True** o **False**.
+
+```python
+a, b = 7, 5
+print(f'a == b: {a == b}')  # Igualdad
+print(f'a!= b: {a != b}')  # Diferencia
+print(f'a < b: {a < b}')  # Menor que
+print(f'a <= b: {a <= b}')  # Menor o igual que
+print(f'a > b: {a > b}')  # Mayor que
+```
+
+### Sentencia if - else en Python
+
+```mermaid
+block-beta
+  columns 3
+  Start(("Inicio")) space:2
+  down<["-"]>(down) space:2
+  Decision{{"If - Else"}} right<["True"]>(right) Process1["Opción A"]
+  downAgain<["False"]>(down) space r3<["Fin A"]>(down)
+  Process2["Opción B"] r2<["Fin B"]>(right) End(("Fin"))
+
+  style Start fill:#969;
+  style End fill:#696;
+```
+
+Para revisar más condiciones usamos `if - elif - else`. Se pueden añadir tanto `elif` como se deseen.
+
+```python
+decision_a = False
+decision_b = True
+
+if decision_a:
+    print("La decision es verdadera opción I.")
+elif decision_b:
+    print("La decision es verdadeda opción II.")
+else:
+    print("La decision es falsa.")
+```
+
+### Operadores lógicos AND, OR y NOT en Python
+
+```tip
+Operador **AND**. El resultado es **True** si las entradas A **y** B son **True** en los caso contrarios son **False**. `a and b`.
+```
+
+```warning
+Operador **OR**. El resultado es **True** si las entradas A **o** B son **True** en el caso en que A *y* B son **False** el resultado es **False**. `a or b`.
+```
+
+```danger
+Operador **NOT**. El resultado es **True** si la entrada es **False** o viceversa. `a = not b`.
+```
+
+### Bucle WHILE en Python
+
+En Python existen los ciclos **while** y los ciclos **for**. En el ciclo **while** existirá una condición que permite entrar al mismo y continuará repitiendo el bucle miestras la condición no cambie a falsa.
+
+```mermaid
+flowchart LR
+    A[Inicio] -->|on| B(Condición)
+    B --> C{while}
+    C -->|True| C{while}
+    C -->|False| E[Salir bucle]
+```
+
+```python
+i = 0
+while i < 5:
+    print(f'Valor: {i}')
+    i += 1
 ```
