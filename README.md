@@ -18,6 +18,7 @@ Programación en los lenguajes: Python, Java, C y C++
     - [Sentencia if - else en Python](#sentencia-if---else-en-python)
     - [Operadores lógicos AND, OR y NOT en Python](#operadores-lógicos-and-or-y-not-en-python)
     - [Bucle WHILE en Python](#bucle-while-en-python)
+    - [Bucle FOR en Python](#bucle-for-en-python)
 
 ## Python v3
 
@@ -293,4 +294,21 @@ i = 0
 while i < 5:
     print(f'Valor: {i}')
     i += 1
+```
+
+### Bucle FOR en Python
+
+Permite iterar conociendo en número de ciclos. Ejemplo de bucle **for**:
+
+```python
+cadena = 'Hola Mundo'
+for letra in cadena:
+    print(letra, end=' ') # end=' ' imprime sin \n
+```
+
+La función `range(valor_inic, valor_fin)` permite un rango de valores desde un inicio hasta un final:
+
+```python
+for contador in range(1,5):
+    print(f'Rango del 1 al 6: {contador}')
 ```
