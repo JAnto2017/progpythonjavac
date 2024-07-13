@@ -19,6 +19,9 @@ Programación en los lenguajes: Python, Java, C y C++
     - [Operadores lógicos AND, OR y NOT en Python](#operadores-lógicos-and-or-y-not-en-python)
     - [Bucle WHILE en Python](#bucle-while-en-python)
     - [Bucle FOR en Python](#bucle-for-en-python)
+    - [Listas, Tuplas, Diccionarios](#listas-tuplas-diccionarios)
+      - [Colecciones en Python](#colecciones-en-python)
+      - [Listas en Python](#listas-en-python)
 
 ## Python v3
 
@@ -266,15 +269,15 @@ else:
 ### Operadores lógicos AND, OR y NOT en Python
 
 ```tip
-Operador **AND**. El resultado es **True** si las entradas A **y** B son **True** en los caso contrarios son **False**. `a and b`.
+Operador AND. El resultado es True si las entradas A y B son True en los caso contrarios son False. (a and b).
 ```
 
 ```warning
-Operador **OR**. El resultado es **True** si las entradas A **o** B son **True** en el caso en que A *y* B son **False** el resultado es **False**. `a or b`.
+Operador OR. El resultado es True si las entradas A o B son True en el caso en que A y B son False el resultado es False. (a or b).
 ```
 
 ```danger
-Operador **NOT**. El resultado es **True** si la entrada es **False** o viceversa. `a = not b`.
+Operador NOT. El resultado es True si la entrada es False o viceversa. (a = not b).
 ```
 
 ### Bucle WHILE en Python
@@ -311,4 +314,40 @@ La función `range(valor_inic, valor_fin)` permite un rango de valores desde un 
 ```python
 for contador in range(1,5):
     print(f'Rango del 1 al 6: {contador}')
+```
+
+### Listas, Tuplas, Diccionarios
+
+#### Colecciones en Python
+
+Permite agrupar varios datos en una misma variable (colección).
+
+1. **Listas**: conjunto de datos ordenados. Se puede modificar el valor de cualquiera de sus elementos, incluso añadir nuevos.
+2. **Tuplas**: almacena conjunto de datos de cualquier tipo. Son inmutables, ya que no podemos modificar, añadir o borrar sus elementos.
+3. **Set**: no mantienen un orden, ni elementos duplicados como si lo tienen las _Listas_ o las _Tuplas_.
+4. **Diccionarios**: almacena la información en formato llave-valor. Los elementos están ordenados y es posible modificar los elementos.
+
+#### Listas en Python
+
+```note
+Lists are mutable sequences, typically used to store collections of homogeneous items (where the precise degree of similarity will vary by application).
+```
+
+```tip
+Lists may be constructed in several ways:
+
+- Using a pair of square brackets to denote the empty list: []
+- Using square brackets, separating items with commas: [a], [a, b, c]
+- Using a list comprehension: [x for x in iterable]
+- Using the type constructor: list() or list(iterable)
+```
+
+```python
+# Lista compuesta de nombres. El primer elemento empieza por 0
+nombres = ['Juan', 'Maria', 'Pedro', 'Ana']
+print (f'Lista de nombres: {nombres}')
+
+# Lista heterogénea (múltiples tipos de datos)
+lista_hetero = [10, True, 'Antonio']
+print (f'Lista de lista: {lista_hetero}')
 ```
