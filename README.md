@@ -22,6 +22,16 @@ Programación en los lenguajes: Python, Java, C y C++
     - [Listas, Tuplas, Diccionarios](#listas-tuplas-diccionarios)
       - [Colecciones en Python](#colecciones-en-python)
       - [Listas en Python](#listas-en-python)
+      - [Tuplas en Python](#tuplas-en-python)
+      - [Set en Python](#set-en-python)
+      - [Diccionario en Python](#diccionario-en-python)
+      - [Listas \& Diccionarios en Python](#listas--diccionarios-en-python)
+    - [Funciones en Python](#funciones-en-python)
+      - [Parámetros y Argumentos en funciones de Python](#parámetros-y-argumentos-en-funciones-de-python)
+      - [Módulos en Python](#módulos-en-python)
+      - [Argumentos por nombre en funciones de Python](#argumentos-por-nombre-en-funciones-de-python)
+      - [Retornar Tuplas desde una función en Python](#retornar-tuplas-desde-una-función-en-python)
+      - [Argumentos variables en una función de Python](#argumentos-variables-en-una-función-de-python)
 
 ## Python v3
 
@@ -351,3 +361,254 @@ print (f'Lista de nombres: {nombres}')
 lista_hetero = [10, True, 'Antonio']
 print (f'Lista de lista: {lista_hetero}')
 ```
+
+#### Tuplas en Python
+
+```note
+Tuples are immutable sequences, typically used to store collections of heterogeneous data (such as the 2-tuples produced by the enumerate() built-in). Tuples are also used for cases where an immutable sequence of homogeneous data is needed (such as allowing storage in a set or dict instance).
+```
+
+```tip
+class tuple([iterable])
+
+Tuples may be constructed in a number of ways:
+
+- Using a pair of parentheses to denote the empty tuple: ()
+- Using a trailing comma for a singleton tuple: a, or (a,)
+- Separating items with commas: a, b, c or (a, b, c)
+- Using the tuple() built-in: tuple() or tuple(iterable)
+```
+
+Ejemplo de creación de **tupla** inmutable:
+
+```python
+# tupla de nombres
+nombres = ('Juan', 'Pedro', 'Maria', 'Isabel')
+print(f'Tupla inmutable de nombres: {nombres}')
+
+# tupla heterogénea
+heterogenea = (10, 'Hola', True, [1, 2, 3])
+print(f'Tupla heterogénea: {heterogenea}')
+```
+
+#### Set en Python
+
+Los **SET** y los **Conjuntos son equivalentes, en Python.
+
+```note
+A set object is an unordered collection of distinct hashable objects. Common uses include membership testing, removing duplicates from a sequence, and computing mathematical operations such as intersection, union, difference, and symmetric difference. (For other containers see the built-in dict, list, and tuple classes, and the collections module.)
+```
+
+```tip
+class set([iterable])
+class frozenset([iterable])
+
+Return a new set or frozenset object whose elements are taken from iterable. The elements of a set must be hashable. To represent sets of sets, the inner sets must be frozenset objects. If iterable is not specified, a new empty set is returned.
+
+Sets can be created by several means:
+- Use a comma-separated list of elements within braces: {'jack', 'sjoerd'}
+- Use a set comprehension: {c for c in 'abracadabra' if c not in 'abc'}
+- Use the type constructor: set(), set('foobar'), set(['a', 'b', 'foo'])
+```
+
+Ejemplo de creación de un **Set** de datos no repetidos sin orden en particular:
+
+```python
+# Creación de un Set vacío
+s = set()
+
+# Añadir elementos al Set
+s.add(1)
+s.add(2)
+s.add(3)
+
+# Mostrar el Set
+print(s)
+```
+
+#### Diccionario en Python
+
+Un **diccionario** puede tener cantidad de elementos, en forma: **clave:valor** (_key:value_). En los **diccionarios** se utilizan llaves **{}** (como en el _set_). La **clave** (_key_) debe ser de tipo _string_, el **valor** si que puede ser de cualquier otro tipo. A partir de la versión 3.7 los datos si están ordenados. No se permite duplicar elementos dentro de un **diccionario**, en caso de duplicidad, el último valor introducido es el que predominará.
+
+```tip
+Dictionaries can be created by several means:
+
+- Use a comma-separated list of key: value pairs within braces: {'jack': 4098, 'sjoerd': 4127} or {4098: 'jack', 4127: 'sjoerd'}
+- Use a dict comprehension: {}, {x: x ** 2 for x in range(10)}
+- Use the type constructor: dict(), dict([('foo', 100), ('bar', 200)]), dict(foo=100, bar=200)
+```
+
+```python
+# Diccionario vacío
+diccionario = {}
+
+# Diccionario con pares clave-valor
+diccionario = {
+    'clave1': 'valor1',
+    'clave2': 'valor2',
+    'clave3': 'valor3'
+}
+
+# Añadir un par clave-valor
+diccionario['clave4'] = 'valor4'
+
+# Modificar un valor
+diccionario['clave1'] = 'nuevo_valor1'
+
+# Eliminar un par clave-valor
+del diccionario['clave2']
+```
+
+Las llaves del **diccionario** se imprimen entre _corchetes_:
+
+```python
+# Obtener una lista de las llaves de nuestro diccionario
+
+diccionario = {'a': 1, 'b': 2, 'c': 3}
+llaves = list(diccionario.keys())
+print(llaves)   # ['a', 'b', 'c']
+# Obtener una lista de los valores de nuestro diccionario
+print(f'Lista valores: {diccionario.values()}')
+# Obtener una lista de los elementos del diccionario (items)
+print(f'Lista elementos: {diccionario.items()}')
+```
+
+#### Listas & Diccionarios en Python
+
+Un elemento de la **lista** puede ser un **objeto**, un **diccionario** u otro tipo. Son útiles para almacenar información.
+
+```python
+# Diccionario 1
+diccionario_1 = {
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "edad": 25,
+    "direccion": {
+        "calle": "Av. Paseo de la Reina",
+        "numero": 123,
+        "ciudad": "Barcelona"
+    }
+}
+
+# Diccionario 2
+diccionario_2 = {
+    "nombre": "Maria",
+    "apellido": "García",
+    "edad": 30,
+    "direccion": {
+        "calle": "Calle del Prado",
+        "numero": 456,
+        "ciudad": "Madrid"
+    }
+}
+
+# Añadir los diccionarios a la lista
+lista_de_diccionarios = [diccionario_1, diccionario_2]
+```
+
+### Funciones en Python
+
+Con las **funciones** podemos tener el código en distintos módulos, se crea modularidad. En Python se define la función de la siguiente forma: `def nombre_función([parámetros]): código [return]`.
+
+```python
+# Crear una función
+def mi_funcion():
+    print("Hola, soy una función en Python.")
+    print("Esta función no tiene parámetros.")
+
+# Llamar a la función
+mi_funcion()
+```
+
+#### Parámetros y Argumentos en funciones de Python
+
+```python
+# Función que recibe parámetros y los imprime
+def saludar(parametro):
+    print(f'Mensaje recibido por parámetros: {parametro}')
+# Llamada a la función
+saludar('Hola Mundo')
+saludar('Adios')
+```
+
+#### Módulos en Python
+
+Cuando definimos una función en un archivo diferente al archivo del programa principal.
+
+```mermaid
+flowchart LR
+    Programa_principal --> Función_en_archivo
+```
+
+Ejemplo de programa principal, que enlaza con función definida en otro archivo:
+
+```python
+from moduloFunc import saludar
+# Programa Principal
+argumento = input('Mensaje a enviar: ')
+valor_devuelto = saludar(argumento)
+print(f'Valor devuelto de la función: {valor_devuelto}')
+```
+
+```python
+# Función con parámetros en archivo moduloFunc.py
+def saludar(parametros):
+    print(f'Mensaje recibido: {parametros}')
+    return 'Termina función OK'
+```
+
+#### Argumentos por nombre en funciones de Python
+
+```python
+# Función con argumentos en Python
+def greet_user(name, apellido='', age=0):
+    print(f"Hello {name} and {apellido}! You are {age} years old.")
+
+## Llamar a la función
+greet_user("John Doe", 30)  # opción 1
+greet_user(name='Anto') # opción 2
+```
+
+#### Retornar Tuplas desde una función en Python
+
+```python
+# definir la función que recibe parámetros y retorna una tupla
+def persona_mayuscula(nombre, apellido, edad):
+    print("Esta función retorna valores (tupla)")
+    return (nombre.upper(), apellido.upper(), edad)
+
+# Programa principal
+nombre, apellido, edad = persona_mayuscula('Sandra','Jiménez', 43)
+print(f'Persona: nombre = {nombre}, apellido = {apellido}, edad = {edad}')
+```
+
+#### Argumentos variables en una función de Python
+
+Los argumentos variables se envían en forma de **Tupla**.
+
+```python
+# Crear una función que reciba argumentos variables
+def suma_variables(*args):
+    # Recorrer los argumentos y sumarlos
+    return sum(args)
+
+# Utilizar la función con diferentes argumentos
+print(suma_variables(1, 2, 3, 4, 5))  # Imprime: 15
+print(suma_variables(10, 20, 30))  # Imprime: 60
+print(suma_variables(5, 10, 15, 20))  # Imprime: 50
+```
+
+Ejemplo de argumento variable combinado con un argumento fijo:
+
+```python
+def mi_funcion(nombre, *args):
+    print(f"Hola {nombre}! Mi suma es: {suma_variables(*args)}")
+
+mi_funcion("Juan", 1, 2, 3, 4, 5)  # Imprime: Hola Juan! Mi suma es: 15
+```
+
+Argumentos variables enviados en forma de **Diccionarios**, para ello se utiliza `**kwargs` en los argumentos.
+
+1. **args -> arguments -> tupla.
+2. **kwargs -> keyword arguments -> diccionario.
+3. En una función que combine el uso de valores: _fijos_, _\*\*args_ y _\*\*keywards_, se deben colocar en el orden indicado.
