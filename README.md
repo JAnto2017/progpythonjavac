@@ -32,6 +32,8 @@ Programación en los lenguajes: Python, Java, C y C++
       - [Argumentos por nombre en funciones de Python](#argumentos-por-nombre-en-funciones-de-python)
       - [Retornar Tuplas desde una función en Python](#retornar-tuplas-desde-una-función-en-python)
       - [Argumentos variables en una función de Python](#argumentos-variables-en-una-función-de-python)
+  - [Programación Orientada a Objetos (POO) en Python](#programación-orientada-a-objetos-poo-en-python)
+    - [Clases y Objetos](#clases-y-objetos)
 
 ## Python v3
 
@@ -612,3 +614,27 @@ Argumentos variables enviados en forma de **Diccionarios**, para ello se utiliza
 1. **args -> arguments -> tupla.
 2. **kwargs -> keyword arguments -> diccionario.
 3. En una función que combine el uso de valores: _fijos_, _\*\*args_ y _\*\*keywards_, se deben colocar en el orden indicado.
+
+- - -
+
+## Programación Orientada a Objetos (POO) en Python
+
+### Clases y Objetos
+
+Un _objeto_ es una representación de un concepto. Por ejemplo, un objeto puede ser una persona, un auto o una casa.
+
+Una _clase_ representa las características de un objeto. Por ejemplo, una clase puede ser una clase de persona, una clase de auto o una clase de casa.
+
+A partir de una _clase_ se crean muchos _objetos_.
+
+Una clase está compuesta por:
+
+- Atributos
+- Métodos
+- Constructor
+- Destructor
+- Herencia
+- Polimorfismo
+- Encapsulamiento
+- Abstracción
+- Enumeraciones
